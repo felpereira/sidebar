@@ -9,9 +9,9 @@
 }
 
 .direita {
-  width: 30%;
-  min-width: 30%;
-  min-height: calc(100vh - 4rem);
+  width: 15vw;
+  min-width: 150px;
+  min-height: calc(100vh - 74px);
   height: fit-content;
   padding: 10px;
   margin: 10px 10px 10px 10px;
@@ -27,9 +27,17 @@
   border-radius: 10px;
 }
 
+.exibirDireitaProCima {
+  margin-left: 10px !important;
+  transition: margin-left 0.7s linear;
+}
+
 @media screen and (max-width: 600px) {
   .direita {
-    display: none;
+    position: absolute;
+    margin-left: -55vh;
+    width: 50vw;
+    transition: margin-left 0.7s linear;
   }
 
   .esquerda {
