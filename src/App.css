@@ -1,52 +1,38 @@
 .conteudo {
   min-height: calc(100vh - 2rem);
-  min-width: 303px;
-  padding: 1rem;
-  margin: 1rem;
+  min-width: 248px;
+  padding: 10px;
+  margin: 10px;
   border: 1px solid gray;
   display: flex;
-  transition: all 6s ease 1s; /* Alteração aqui para especificar apenas a propriedade de transição necessária */
+  border-radius: 10px;
 }
 
 .direita {
-  min-width: calc(30vw - 3.5rem);
-  padding: 1rem;
-  margin: 1rem 0.5rem 1rem 1rem;
+  width: 30%;
+  min-width: 30%;
+  min-height: calc(100vh - 4rem);
+  height: fit-content;
+  padding: 10px;
+  margin: 10px 10px 10px 10px;
   border: 1px solid gray;
-  flex-grow: 1; /* Add this line */
-  opacity: 1; /* Alteração aqui */
-  transition-duration: 300ms;
-  transition-property: opacity, display, visibility;
-  transition-delay: 300ms;
-  display: inherit;
-  /* .transition-property(opacity, visibility); */
-  /* .transition-delay(0, 200ms); */
-  /* transition: opacity 6s ease 1s; Alteração aqui para especificar apenas a propriedade de transição necessária */
+  border-radius: 10px;
 }
 
 .esquerda {
-  min-width: calc(70vw - 3.5rem);
-  padding: 1rem;
-  margin: 1rem 1rem 1rem 0.5rem;
+  flex-grow: 1;
+  padding: 10px;
+  margin: 10px 10px 10px 10px;
   border: 1px solid gray;
-  flex-grow: 1; /* Add this line */
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 600px) {
   .direita {
-    opacity: 0; /* Alteração aqui */
-    pointer-events: none; /* Para desativar interações com o elemento oculto */
-    min-width: none;
-    min-height: none;
-    width: 0;
-    height: 0;
-    padding: 0px;
-    border: none;
     display: none;
   }
 
   .esquerda {
-    width: calc(100vw - 6rem);
-    transition: all 6s ease; /* Alteração aqui para especificar apenas a propriedade de transição necessária */
+    margin: 10px 10px 10px 10px;
   }
 }
