@@ -6,7 +6,6 @@ function App() {
   const [exibir, setExibir] = useState(false);
   const style = exibir ? 'exibirDireitaProCima' : '';
 
-
   useEffect(() => {
     let posicaoX = 0;
     let posicaoY = 0;
@@ -14,7 +13,6 @@ function App() {
 
     const handleWindowTouchMove = event => {
       if (isTouching) {
-
         const currentX = event.touches[0].clientX;
         const currentY = event.touches[0].clientY
 
@@ -23,10 +21,8 @@ function App() {
           const { posicaoYMax, posicaoYMIn } = CalcularPosicaoMaxEMinY(catetoAdjacente);
           if ((currentY < posicaoYMax && currentY > posicaoYMIn)) {
             setExibir(true);
-
           }
         }
-
 
         if (posicaoX !== 0 && posicaoX - 50 > currentX) {
           const catetoAdjacente = posicaoX - event.touches[0].clientX;
@@ -35,25 +31,32 @@ function App() {
           if ((currentY < posicaoYMax && currentY > posicaoYMIn)) {
             setExibir(false);
           }
-
         }
       }
 
-      function CalcularPosicaoMaxEMinY(catetoAdjacente) {
+      // Esta função é utilizada para calcular as posições máxima e mínima ao longo do eixo Y,
+      // a fim de evitar a abertura ou fechamento acidental da barra lateral quando o usuário
+      // realiza um movimento de arrastar para baixo. A ideia é permitir a abertura apenas se
+      // o movimento for lateral, com uma angulação máxima de 30 graus (15 para cima e 15 para baixo).      
+      function calcularPosicaoMaxEMinY(catetoAdjacente) {
+        // Convertendo o ângulo para radianos
         const anguloRadianos = (Math.PI / 180) * 15;
+        
+        // Calculando o cateto oposto com base no ângulo
         const catetoOposto = Math.tan(anguloRadianos) * catetoAdjacente;
-
+        
+        // Calculando as posições máxima e mínima ao longo do eixo Y
         const posicaoYMax = posicaoY + catetoOposto;
-        const posicaoYMIn = posicaoY - catetoOposto;
-        return { posicaoYMax, posicaoYMIn };
+        const posicaoYMin = posicaoY - catetoOposto;
+        
+        // Retornando as posições calculadas
+        return { posicaoYMax, posicaoYMin };
       }
-    };
 
     const handleWindowTouchStart = event => {
       isTouching = true;
       posicaoX = event.touches[0].clientX;
       posicaoY = event.touches[0].clientY;
-
     };
 
     const handleWindowTouchEnd = () => {
@@ -71,9 +74,6 @@ function App() {
     };
   }, []);
 
-
-
-
   return (
     <div className="conteudo">
       <div className={`direita ${style}`} ></div>
@@ -89,14 +89,7 @@ function App() {
           }}
         >
           <Logo width={50} height={50} onClick={() => setExibir(!exibir)} />
-
-
-
-
-
         </div >
-
-
       </div >
     </div >
   );
