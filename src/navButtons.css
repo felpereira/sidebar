@@ -1,0 +1,28 @@
+.nav-icons {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 290px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding-left: 10px;
+}
+
+.nav-text {
+  font-size: 16px;
+  font-weight: var(--regular-400);
+  padding-top: 4px;
+  margin-left: 10px;
+}
+
+.selecionado {
+  fill: var(--primary-600) !important;
+  background-color: var(--azul-500);
+  border-radius: 5px;
+  font-weight: var(--simi-bold-600);
+  color: var(--primary-600);
+  transition: background-color 0.3s ease-in-out;
+}
