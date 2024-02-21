@@ -12,15 +12,11 @@ import { ReactComponent as Bag } from './svg/Bag.svg';
 import { ReactComponent as User } from './svg/User.svg';
 import { ReactComponent as Setting } from './svg/Setting.svg';
 import { ReactComponent as Filter } from './svg/Filter.svg';
-import { ReactComponent as Moon } from './svg/moon.svg';
-import { ReactComponent as Toogle } from './svg/Toogle.svg';
-
-import { ReactComponent as Logout } from './svg/Logout.svg';
 
 
-
-import { NavButton } from './NavButton';
-
+import { NavButton } from './components/NavButton/NavButton';
+import { NavLogo } from './components/NavLogo/NavLogo';
+import { NavBottom } from './components/NavBottom/NavBottom';
 
 function App() {
   const [exibir, setExibir] = useState(false);
@@ -115,55 +111,49 @@ function App() {
         {/* Brand + Nav List */}
         <div className={`brand-navlist`}>
           {/* Brand */}
-          <div className={`brand`}>
-            <Logotipo width={40} height={40} />
-            <div className={`brand-title`}>
-              Appli
-            </div>
-          </div>
+          <NavLogo Icon={<Logotipo width={50} height={50} />} texto={'Appli'} />
           {/* Nav List */}
-          <div>
-            <NavButton Icon={<Home width={30} height={30} />}
-              texto="Dashboard" id={1} selecionado={selecionado === 1} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<EditSquare width={30} height={30} />}
-              texto="Posts" id={2} selecionado={selecionado === 2} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Image width={30} height={30} />}
-              texto="Media" id={3} selecionado={selecionado === 3} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Document width={30} height={30} />}
-              texto="Pages" id={4} selecionado={selecionado === 4} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Chat width={30} height={30} />}
-              texto="Commets" id={5} selecionado={selecionado === 5} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Category width={30} height={30} />}
-              texto="Appearance" id={6} selecionado={selecionado === 6} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Bag width={30} height={30} />}
-              texto="Plugins" id={7} selecionado={selecionado === 7} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<User width={30} height={30} />}
-              texto="Users" id={8} selecionado={selecionado === 8} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Setting width={30} height={30} />}
-              texto="Settings" id={9} selecionado={selecionado === 9} definirSelecionado={definirSelecionado} />
-            <NavButton Icon={<Filter width={30} height={30} />}
-              texto="Tools" id={10} selecionado={selecionado === 10} definirSelecionado={definirSelecionado} />
-          </div>
-          <div className={`botton-nav`}>
-            <div className={`darkmode`}>
-              <Moon width={33} height={33} />Dark Mode<Toogle width={50} height={50} />
-            </div>
-            <button className={`buttonLogout`}>  <Logout width={33} height={33} /><div className={`buttonText`}>Logout</div></button>
-          </div>
+          <NavButton Icon={<Home width={30} height={30} />}
+            texto="Dashboard" id={1} selecionado={selecionado === 1} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<EditSquare width={30} height={30} />}
+            texto="Posts" id={2} selecionado={selecionado === 2} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Image width={30} height={30} />}
+            texto="Media" id={3} selecionado={selecionado === 3} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Document width={30} height={30} />}
+            texto="Pages" id={4} selecionado={selecionado === 4} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Chat width={30} height={30} />}
+            texto="Commets" id={5} selecionado={selecionado === 5} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Category width={30} height={30} />}
+            texto="Appearance" id={6} selecionado={selecionado === 6} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Bag width={30} height={30} />}
+            texto="Plugins" id={7} selecionado={selecionado === 7} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<User width={30} height={30} />}
+            texto="Users" id={8} selecionado={selecionado === 8} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Setting width={30} height={30} />}
+            texto="Settings" id={9} selecionado={selecionado === 9} definirSelecionado={definirSelecionado} />
+          <NavButton Icon={<Filter width={30} height={30} />}
+            texto="Tools" id={10} selecionado={selecionado === 10} definirSelecionado={definirSelecionado} />
+          <NavBottom />
         </div>
       </div>
       <div className='esquerda'>
-        <div
-          style={{
-            display: 'inline-flex',
-            paddingTop: '10px',
-            paddingRight: '10px',
-            width: '100%',
-            justifyContent: 'flex-end',
-          }}
-        >
-          <Logo width={50} height={50} onClick={() => setExibir(!exibir)} />
+
+        <div className={'top-white'}>
+          <div
+            style={{
+              display: 'inline-flex',
+              paddingTop: '10px',
+              paddingRight: '10px',
+              width: '100%',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <Logo width={50} height={50} onClick={() => setExibir(!exibir)} />
+          </div>
         </div >
+        <div className={'site'}>
+          BRENDA É O AMOR DA MINHA VIDA
+        </div>
       </div >
     </div >
   );

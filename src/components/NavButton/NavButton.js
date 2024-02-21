@@ -19,6 +19,7 @@ export const NavButton = ({ Icon, texto, selecionado, definirSelecionado, id }) 
     </button>
   );
 };
+
 NavButton.prototype = {
   Icon: PropTypes.object.isRequired,
   texto: PropTypes.string.isRequired,

@@ -26,3 +26,14 @@
   color: var(--primary-600);
   transition: background-color 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 600px) {
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icons {
+    width: initial;
+    padding: 0px 10px 0px 10px;
+  }
+}
