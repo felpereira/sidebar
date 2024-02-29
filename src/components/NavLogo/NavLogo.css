@@ -1,0 +1,22 @@
+.brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.brand-title {
+  font-weight: var(--simi-bold-600);
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  margin-left: 15px;
+  font-family: "Epilogue", "Courier New", Courier, monospace;
+}
+
+@media screen and (max-width: 600px) {
+  .brand-title {
+    display: none;
+  }
+  .brand {
+    padding-left: 5px;
+  }
+}
